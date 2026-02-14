@@ -1,0 +1,22 @@
+
+
+.welcome {
+
+
+    & .welcome-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .text-content {
+
+        }
+        & .image-content {
+            & img {
+
+            }
+        }
+    }
+}
+
+

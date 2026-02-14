@@ -1,0 +1,14 @@
+
+.socials-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;    
+    padding-block: 1rem;
+    & .social-item {
+        margin-bottom: 1rem;
+        & a {
+            
+            font-size: 20px;
+        }
+    }
+}
