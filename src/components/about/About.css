@@ -1,0 +1,24 @@
+section.about {
+
+
+
+
+    & .about-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        & .image {
+
+        }
+        & .text {
+            & h2 {
+                font-size: 40px;
+            }
+            & p {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+}

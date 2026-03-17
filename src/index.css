@@ -18,3 +18,13 @@ a {
   margin: 0 auto;
   width: 90%;
 }
+
+[data-theme="dark"] {
+  background: #0f172a;
+  color: white;
+}
+
+[data-theme="light"] {
+  background: white;
+  color: black;
+}

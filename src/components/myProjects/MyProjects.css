@@ -1,0 +1,53 @@
+section.my-projects {
+    background-color: #000;
+    padding-block: 30px;
+    & .title {
+        font-size: 40px;
+        color: #fff;
+        margin-bottom: 40px;
+        text-align: center;
+        & strong {
+            font-weight: 700;
+        }
+    }
+    & .projects-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        & .project-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            & .cover {
+                & img {
+
+                }
+            }
+            & .info {
+                color: #fff;
+                & .order {
+                    margin-bottom: 20px;
+                    font-size: 50px;
+                }
+                & .project-title {
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
+                & p {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
+                & a {
+                    color: inherit;
+                }
+            }
+
+                &.reverse {
+                    & .cover {
+                        order: 1;
+                    }
+                }
+        }
+    }
+}
+

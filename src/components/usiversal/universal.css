@@ -1,0 +1,16 @@
+
+
+
+.title {
+    & h2 {
+        font-size: 28px;
+        text-transform: capitalize;
+        margin-block: 1rem;
+    }
+}
+.title.skills {
+    color: blueviolet;
+}
+.title.experiance {
+    color: rgb(25, 82, 53);
+}

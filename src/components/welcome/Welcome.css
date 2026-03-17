@@ -20,3 +20,21 @@
 }
 
 
+.dark {
+    background-color: black;
+
+    & .text-content {
+        color: white;
+
+        & img {
+
+            filter: invert(100%);
+        }
+        }
+
+    & .image-content {
+            & img {
+                filter: invert(100%);
+            }
+        }
+}

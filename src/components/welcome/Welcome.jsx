@@ -3,11 +3,11 @@ import Socials from "../socials/Socials";
 import banner from "../../assets/banner.svg"
 
 
-function Welcome() {
+function Welcome( {isDark} ) {
 
 
   return (
-    <section className="welcome">
+    <section className={`welcome ${isDark ? 'dark' : ''}`}>
         <div className="container">
             <div className="welcome-wrapper">
                 <div className="text-content">

@@ -30,3 +30,18 @@
 
 }
 
+.night-mode {
+    cursor: pointer;
+    background-color: black;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.2s;
+
+    & h1 {
+        color: white;
+    }
+}
