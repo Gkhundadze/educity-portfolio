@@ -9,6 +9,7 @@ import MyProjects from "./components/myProjects/MyProjects";
 import { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { LanguageContext } from "./contexts/LanguageContext";
+import ContactMe from "./components/contactMe/ContactMe";
 
 
 
@@ -38,7 +39,7 @@ function App() {
                 <Route path="/experience" element={<MyExperience experienceApi={experienceUrl}  />} />
                 <Route path="/projects" element={<MyProjects projectsApi={projectsUrl}  />} />
                 <Route path="/skills" element={<Myskills skillsApi={skillsUrl}  />} />
-
+                <Route path="/contact" element={<ContactMe />} />
             </Routes>
 
             { }

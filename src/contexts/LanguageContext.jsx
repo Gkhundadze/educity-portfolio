@@ -1,4 +1,5 @@
 import {useEffect, useMemo, useState, createContext} from 'react'
+import { getFromLocalStorage, saveToLocalStorage } from '../utils/localStorage'
 
 
 export const LanguageContext = createContext('en')
@@ -15,14 +16,14 @@ export function LanguageProvider ({children}) {
 
     useEffect(() => {
         
-        const savedLanguage = localStorage.getItem('language')
+        const savedLanguage = getFromLocalStorage("language")
         if (savedLanguage) {
             setLanguage(savedLanguage)
         }
     }, [])
 
     useEffect(() => {
-        localStorage.setItem("language", language)
+        saveToLocalStorage("language", language)
     }, [language])
 
     const value = useMemo(() => {

@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState, useMemo } from "react";
-
+import { saveToLocalStorage, getFromLocalStorage } from "../utils/localStorage";
 export const ThemeContext = createContext('light')
 
 
@@ -9,7 +9,7 @@ export function ThemeProvider ({children}) {
 
   // Load saved theme (once)
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = getFromLocalStorage("theme");
     if (savedTheme) {
       setTheme(savedTheme);
     }
@@ -18,7 +18,7 @@ export function ThemeProvider ({children}) {
   // Apply theme
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
+    saveToLocalStorage("theme", theme);
   }, [theme]);
 
    // Toggle
