@@ -35,6 +35,8 @@ export function ThemeProvider ({children}) {
     };
   }, [theme]);
 
+
+
   return (
     <ThemeContext.Provider value={value}>
       {children}

@@ -8,12 +8,13 @@ import About from "./components/about/About";
 import MyProjects from "./components/myProjects/MyProjects";
 import { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
+import { LanguageContext } from "./contexts/LanguageContext";
 
 
 
 function App() {
     const { theme, toggleTheme } = useContext(ThemeContext)
-   
+    const { language, toggleLanguage } = useContext(LanguageContext)
 
     const skillsUrl = "https://raw.githubusercontent.com/Gkhundadze/educity-react-portfolio-data/refs/heads/main/skills_data.json"
     const experienceUrl = 'https://raw.githubusercontent.com/Gkhundadze/educity-react-portfolio-data/refs/heads/main/myexperience-data.json'
@@ -22,10 +23,13 @@ function App() {
     useEffect(() => {
         console.log( theme )
     }, [theme])
+
+    useEffect(() => {
+        console.log(language)
+    }, [language])
     return (
         <>
             <Header toggleTheme={toggleTheme} />
-
 
             <Routes>
 

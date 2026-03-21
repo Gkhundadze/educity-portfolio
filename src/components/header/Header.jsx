@@ -2,16 +2,20 @@ import './Header.css'
 import cv from '../../assets/cv/GrigoriKhundadze_EN.pdf'
 import logo from "./../../assets/logo.svg"
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import {ThemeContext} from "../../contexts/ThemeContext"
+import { LanguageContext } from '../../contexts/LanguageContext'
 
 
 
 
-export default function Header({ toggleTheme }) {
-   
+
+export default function Header({  }) {
+   const { toggleTheme } = useContext(ThemeContext)
+   const { language, toggleLanguage } = useContext(LanguageContext)
     useEffect(() => {
         
-     
+     console.log(language)
             
     }, [])
 
@@ -50,6 +54,11 @@ export default function Header({ toggleTheme }) {
                 </div>
                 <div className='night-mode' onClick={() => toggleTheme()}>
                     <h1>aaa</h1>
+                </div>
+                <div>
+                    <button className='language-toggle' onClick={toggleLanguage}>
+                        {language === "en" ? "GE" : "EN"}
+                    </button>
                 </div>
             </div>
         </div>
