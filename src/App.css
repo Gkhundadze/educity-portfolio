@@ -1,14 +1,14 @@
-:root{
+:root {
   --bg: white;
   --text: black;
 }
 
-.dark{
+.dark {
   --bg: #0f172a;
   --text: white;
 }
 
-.app{
+.app {
   background: var(--bg);
   color: var(--text);
 }
@@ -19,14 +19,30 @@ body {
 }
 
 
-.app{
+.app {
   background: white;
   color: black;
   min-height: 100vh;
   transition: 0.3s;
 }
 
-.app.dark{
+.app.dark {
   background: #0f172a;
   color: white;
+}
+
+section {
+  &:not(.Toastify) {
+    margin-block: 100px;
+  }
+}
+
+
+/* if light mode */
+html[data-theme="light"] {
+
+  & section,
+  article {
+    color: black;
+  }
 }

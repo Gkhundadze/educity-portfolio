@@ -1,5 +1,16 @@
 
-
+html[data-theme="dark"] {
+  & header {
+    & .logo {
+      & img {
+        filter: invert(100%) brightness(200%);
+      }
+    }
+    & a {
+    color: #fff;
+  }
+  }
+}
 
 
 .header-wrapper {
@@ -8,7 +19,8 @@
     align-items: center;
     padding-block: 1rem;
     & .logo {
-
+        & img {
+        }
     }
 
 
@@ -23,8 +35,6 @@
     & .cta-wrapper {
         & a {
             padding: 10px;
-            background-color: #000;
-            color: #fff;
         }
     }
 
@@ -44,4 +54,166 @@
     & h1 {
         color: white;
     }
+}
+
+/* Download/Button Styles */
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Hover/Active States */
+.cv-download-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.cv-download-btn:active {
+  background-color: #1e40af;
+  transform: translateY(0px);
+}
+
+/* --- The CSS-Constructed Document Icon --- */
+.cv-icon {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* The folded corner effect */
+.cv-icon::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  background-color: #2563eb; /* Matches background */
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  border-bottom-left-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+/* The lines inside the document */
+.cv-icon::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 3px;
+  width: 8px;
+  height: 2px;
+  background-color: white;
+  box-shadow: 0 -4px white, 0 -8px white;
+}
+
+/* --- The Hover Interaction --- */
+/* Match the corner background to the new background on hover */
+.cv-download-btn:hover .cv-icon::before {
+  background-color: #1d4ed8;
+}
+
+/* The Icon Pop Animation */
+.cv-download-btn:hover .cv-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+
+/* if light mode */
+html[data-theme="light"] {
+  & .cv-download-btn {
+    background-color: #000000;
+    color: white;
+  }
+  
+  & .cv-download-btn:hover {
+    background-color: #1b1b1b;
+  }
+}
+
+
+/* --- Language Toggle Styles --- */
+.language-toggle {
+  /* Basic sizing and shape */
+  min-width: 30px;
+  height: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #d1d5db; /* Light gray border */
+  
+  /* Flex layout to center the text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Text styling */
+  color: #ffffff; /* White text looks best on flag backgrounds */
+  font-weight: 800; /* Extra bold for readability */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Adds crucial readability */
+  
+  /* Smooth transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  overflow: hidden;
+  
+  /* Define background positioning once */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* --- State: Georgian Flag (Current Site EN, target is GE) --- */
+.language-toggle[data-lang="en"] {
+  /* High-quality SVG Background */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="133"><rect width="200" height="133" fill="white"/><path d="M80 0h40v133H80zM0 46.5h200v40H0z" fill="%23cc0000"/><g fill="%23cc0000"><path d="M42 22.5c0-4-3-7-7-7s-7 3-7 7 3 7 7 7 7-3 7-7zm-7-12v24m-12-12h24"/><path d="M165 22.5c0-4-3-7-7-7s-7 3-7 7 3 7 7 7 7-3 7-7zm-7-12v24m-12-12h24"/><path d="M42 110.5c0-4-3-7-7-7s-7 3-7 7 3 7 7 7 7-3 7-7zm-7-12v24m-12-12h24"/><path d="M165 110.5c0-4-3-7-7-7s-7 3-7 7 3 7 7 7 7-3 7-7zm-7-12v24m-12-12h24"/></g></svg>');
+}
+
+/* --- State: UK Flag (Current Site GE, target is EN) --- */
+.language-toggle[data-lang="ge"] {
+  /* High-quality SVG Background */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><path fill="%23012169" d="M0 0h200v100H0z"/><path stroke="white" stroke-width="20" d="M0 0l200 100M0 100L200 0"/><path stroke="%23C8102E" stroke-width="12" d="M0 0l200 100M0 100L200 0"/><path stroke="white" stroke-width="30" d="M100 0v100M0 50h200"/><path stroke="%23C8102E" stroke-width="18" d="M100 0v100M0 50h200"/></svg>');
+}
+
+/* --- Dark Mode Logic --- */
+.dark .language-toggle {
+  /* Dim the flags slightly in dark mode so they aren't "light bombs" */
+  filter: brightness(0.8) contrast(1.1);
+  border-color: #374151; /* Darker border */
+}
+
+/* --- Hover Effect --- */
+.language-toggle:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1); /* Brighten on hover for both modes */
+}
+
+.dark .language-toggle:hover {
+  filter: brightness(1) contrast(1.1); /* Bring brightness back up to normal on dark mode hover */
+}
+
+/* --- Text Styling (Current Active Language Highlight) --- */
+.lang-text {
+  z-index: 2; /* Ensure text stays on top */
+  transition: transform 0.2s ease;
+}
+
+.language-toggle:active .lang-text {
+  transform: scale(0.9);
 }

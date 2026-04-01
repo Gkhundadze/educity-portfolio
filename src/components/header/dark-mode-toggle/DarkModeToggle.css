@@ -51,7 +51,7 @@
 
 /* Checked states */
 input:checked + .slider {
-  background-color: #4f46e5; /* Indigo color for dark mode */
+  background-color: #65637f; /* Indigo color for dark mode */
 }
 
 input:checked + .slider:before {

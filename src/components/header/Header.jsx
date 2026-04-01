@@ -56,14 +56,23 @@ export default function Header({  }) {
                     </ul>
                 </nav>
                 <div className="cta-wrapper">
-                    <a href={cv} download>download</a>
+                    <a href={cv} className="cv-download-btn" download>
+                        <span className="cv-icon"></span>
+                        <span className="btn-label">Download cv</span>
+                    </a>
                 </div>
                 <div >
                     <DarkModeToggle isDark={theme === 'dark'} onToggle={toggleTheme} />
                 </div>
                 <div>
-                    <button className='language-toggle' onClick={toggleLanguage}>
-                        {language === "en" ? "GE" : "EN"}
+                    <button 
+                        className="language-toggle" 
+                        onClick={toggleLanguage}
+                        data-lang={language}
+                        >
+                        <span className="lang-text">
+                            {/* {language === "en" ? "GE" : "EN"} */}
+                        </span>
                     </button>
                 </div>
             </div>

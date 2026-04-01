@@ -1,7 +1,6 @@
 
 section.my-experience {
-    background-color: black;
-    color: white;
+    color: #fff;
     & .inner-wrapper {
         padding: 60px 80px;
 
