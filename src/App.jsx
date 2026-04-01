@@ -21,13 +21,17 @@ function App() {
     const experienceUrl = 'https://raw.githubusercontent.com/Gkhundadze/educity-react-portfolio-data/refs/heads/main/myexperience-data.json'
     const projectsUrl = "https://raw.githubusercontent.com/Gkhundadze/educity-react-portfolio-data/refs/heads/main/projects-data.json"
     const aboutUrl = "https://raw.githubusercontent.com/Gkhundadze/educity-react-portfolio-data/refs/heads/main/about-data.json"
-    useEffect(() => {
-        console.log( theme )
-    }, [theme])
+    
 
-    useEffect(() => {
-        console.log(language)
-    }, [language])
+    
+    
+    // useEffect(() => {
+    //     console.log( theme )
+    // }, [theme])
+
+    // useEffect(() => {
+    //     console.log(language)
+    // }, [language])
     return (
         <>
             <Header toggleTheme={toggleTheme} />

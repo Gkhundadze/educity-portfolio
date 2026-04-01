@@ -11,9 +11,9 @@ section.my-projects {
         }
     }
     & .projects-wrapper {
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 20px; */
         & .project-card {
             display: flex;
             align-items: center;

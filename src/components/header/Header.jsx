@@ -5,23 +5,29 @@ import { Link } from 'react-router-dom'
 import { useEffect, useContext } from 'react'
 import {ThemeContext} from "../../contexts/ThemeContext"
 import { LanguageContext } from '../../contexts/LanguageContext'
-
+import { ToastContainer } from 'react-toastify';
 
 
 
 
 export default function Header({  }) {
-   const { toggleTheme } = useContext(ThemeContext)
+   const { toggleTheme, theme } = useContext(ThemeContext)
    const { language, toggleLanguage } = useContext(LanguageContext)
+
+
+
+
     useEffect(() => {
         
      console.log(language)
+     console.log(theme)
             
-    }, [])
+    }, [theme])
 
   return (
     
     <header >
+        <ToastContainer theme={theme==='light'? 'dark': 'light'} />
         <div className="container">
             <div className="header-wrapper">
                 <div className="logo">
@@ -52,7 +58,14 @@ export default function Header({  }) {
                 <div className="cta-wrapper">
                     <a href={cv} download>download</a>
                 </div>
-                <div className='night-mode' onClick={() => toggleTheme()}>
+                <div 
+                    className='night-mode' 
+                    onClick={() => {
+                        toggleTheme()
+                        
+                    }}
+
+                >
                     <h1>aaa</h1>
                 </div>
                 <div>
