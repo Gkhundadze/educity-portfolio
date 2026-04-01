@@ -1,13 +1,16 @@
 import "./ContactMe.css"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { getFromLocalStorage, saveToLocalStorage } from "../../utils/localStorage";
 import { toast } from 'react-toastify';
+import { LanguageContext } from "../../contexts/LanguageContext";
 
 function ContactMe() {
+  const { language } = useContext(LanguageContext);
   const [name, setName] = useState(getFromLocalStorage("nameinput") || "")
   const [email, setEmail] = useState(getFromLocalStorage("emailinput") || "")
   const [website, setWebsite] = useState("")
   const [message, setMessage] = useState("")
+  const [contactData, setContactData] = useState()
 
 
   const [errorCheck, setErrorCheck] = useState(false);
@@ -27,6 +30,16 @@ function ContactMe() {
   const maxMessageLength = 200;
 
 
+  const contactMeApi = "https://raw.githubusercontent.com/Gkhundadze/educity-react-portfolio-data/refs/heads/main/contact-data.json"
+
+  useEffect(() => {
+    fetch(contactMeApi)
+      .then(res => res.json())  
+      .then(data => {
+        setContactData(data)
+        console.log(data)
+      })
+  }, [])
 
 
   // function to validate name input
@@ -157,10 +170,17 @@ function ContactMe() {
           <button type="submit">Send</button>
         </form>
       </article>
-      <article>
-
-      </article>
-    </section>
+      {contactData && (
+        <article>
+          <h2>{language === "en" ? contactData.sloganEN.genericText : contactData.sloganGE.genericText}</h2>
+          {/* <p>I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.</p>
+          <address>
+            <p>Youremail@gmail.com</p>
+            <p>1234567890</p>
+          </address> */}
+        </article>
+      )}
+  </section>
   )
 }
 

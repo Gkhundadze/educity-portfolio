@@ -1,0 +1,73 @@
+/* Container size */
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+/* Hide default checkbox */
+.theme-switch input {
+  display: none;
+}
+
+/* The track */
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 5px;
+}
+
+/* The circle/knob */
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Rounded borders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Checked states */
+input:checked + .slider {
+  background-color: #4f46e5; /* Indigo color for dark mode */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Icon positioning */
+.icon {
+  font-size: 14px;
+  z-index: 1;
+  pointer-events: none;
+  transition: 0.4s;
+  /* Moves the icon slightly so it stays visible near the knob */
+  margin-left: 2px;
+}
+
+input:checked + .slider .icon {
+  margin-left: 30px;
+}

@@ -6,7 +6,7 @@ import { useEffect, useContext } from 'react'
 import {ThemeContext} from "../../contexts/ThemeContext"
 import { LanguageContext } from '../../contexts/LanguageContext'
 import { ToastContainer } from 'react-toastify';
-
+import  DarkModeToggle  from './dark-mode-toggle/DarkModeToggle';
 
 
 
@@ -58,15 +58,8 @@ export default function Header({  }) {
                 <div className="cta-wrapper">
                     <a href={cv} download>download</a>
                 </div>
-                <div 
-                    className='night-mode' 
-                    onClick={() => {
-                        toggleTheme()
-                        
-                    }}
-
-                >
-                    <h1>aaa</h1>
+                <div >
+                    <DarkModeToggle isDark={theme === 'dark'} onToggle={toggleTheme} />
                 </div>
                 <div>
                     <button className='language-toggle' onClick={toggleLanguage}>

@@ -37,7 +37,7 @@ function MyProjects({projectsApi}) {
                         <SwiperSlide key={project.id}>
                             <article className={`project-card ${(project.id % 2 == 0) ? 'reverse' : ''}`}>
                                 <div className="cover">
-                                    <img src={project.cover} alt={project.title} />
+                                    <img height={400} fetchPriority="high" src={project.cover} alt={project.title} />
                                 </div>
                                 <div className="info">
                                     <div className="order">{project.order}</div>
@@ -52,13 +52,8 @@ function MyProjects({projectsApi}) {
                     ))
                 }
                 </Swiper>
-
-
                 }
-
-                
             </div>
-          
         </div>
     </section>
   )
